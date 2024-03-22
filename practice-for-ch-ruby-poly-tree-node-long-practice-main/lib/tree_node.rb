@@ -50,7 +50,6 @@ class PolyTreeNode
 
         until res.empty?
             first_node = res.shift
-            p first_node
 
             return first_node if first_node.value == target
 
@@ -61,7 +60,7 @@ class PolyTreeNode
             end
 
         end
-        
+
         nil
     end
 
