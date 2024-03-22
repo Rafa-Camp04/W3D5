@@ -43,6 +43,29 @@ class PolyTreeNode
         nil
     end
 
+
+    def bfs(target)
+
+        res = [self]
+
+        until res.empty?
+            first_node = res.shift
+            p first_node
+
+            return first_node if first_node.value == target
+
+            first_node.children.each do |ele|
+                if ele != nil
+                    res << ele
+                end
+            end
+
+        end
+        
+        nil
+    end
+
+
     def inspect
         "#{@value}"
     end
