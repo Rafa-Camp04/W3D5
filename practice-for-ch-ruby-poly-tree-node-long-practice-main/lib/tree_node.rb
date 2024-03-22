@@ -11,20 +11,31 @@ class PolyTreeNode
     end
 
     def parent=(node)
+
+        self.parent.children.pop if self.parent != nil
         @parent = node
-        debugger
+
         if node != nil && !node.children.include?(self)
             node.children << self
         end
 
     end
 
+    def add_child(child)
+        child.parent = self
+    end
 
+    def remove_child(child)
+        raise "error, node is not a child" if !self.children.include?(child)
+        child.parent = nil
+    end
+
+    def dfs(target)
+
+        
+
+    end
 
 end
 
-# node1 = PolyTreeNode.new('root')
-# node2 = PolyTreeNode.new('child1')
-# node3 = PolyTreeNode.new('child2')
 
-# node2.parent = nil
